@@ -1,0 +1,6 @@
+alias python=python3
+alias pip=pip3
+alias ll="ls -lah"
+alias todo="grep -A1 -nri todo:  --exclude-dir={build,.build,.terraform,node_modules,vendor}"
+alias diff="diff --color"
+alias kuebctl="kubectl"

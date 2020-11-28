@@ -1,0 +1,8 @@
+# default terraform fmt --recursive
+terraform() {
+    if [[ $@ == "fmt" ]]; then
+        command terraform fmt --recursive
+    else
+        command terraform "$@"
+    fi
+}

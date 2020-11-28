@@ -1,0 +1,14 @@
+git() {
+    # git diff, include untracked files, disregard deleted files
+    if [[ $@ == "diff" ]]; then
+        (
+            git diff --color --diff-filter=d
+            git ls-files --others --exclude-standard | while read -r i; do git diff --color -- /dev/null "$i"; done
+        ) | less -r
+    # `git add` adds top level of repo
+    elif [[ $@ == "add" ]]; then
+        git add $(git rev-parse --show-toplevel)
+    else
+        command git "$@"
+    fi
+}

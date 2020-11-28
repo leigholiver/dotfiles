@@ -1,0 +1,7 @@
+# count lines of code
+cloc() {
+    DIR_PATH=${1:-$(pwd)}
+    EXT=${2:-"py"}
+    echo "counting *.$EXT files in $DIR_PATH..."
+    find $DIR_PATH -name "*.$EXT" | xargs wc -l | sort -nr | head -n5
+}
