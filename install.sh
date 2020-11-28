@@ -10,3 +10,15 @@ if [ $BASH_EXISTS -eq "0" ]; then
     echo $BASH_CMD >> ~/.bashrc
     source ~/.bashrc
 fi
+
+# config
+FILES=$(cd $SCRIPT_DIR/config; find . -type f -printf '%P\n')
+for FILE in $FILES ; do
+    if [ ! -L "$HOME/$FILE" ]; then
+        if [ -f "$HOME/$FILE" ]; then
+            mv $HOME/$FILE $HOME/$FILE.dotfiles-previous
+        fi
+        mkdir -p $(dirname $HOME/$FILE)
+        ln -s $SCRIPT_DIR/config/$FILE $HOME/$FILE
+    fi
+done
