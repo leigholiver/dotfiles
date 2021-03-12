@@ -7,7 +7,7 @@ if [ -f "$SCRIPT_DIR/.bash-git-prompt/gitprompt.sh" ]; then
 fi
 
 # bash git prompt terraform workspace
-function prompt_callback {
-    [ -d ".terraform" ] && WORKSPACE=${TF_WORKSPACE:-$(terraform workspace show)}
-    [ ! -z "$WORKSPACE" ] && echo " [ \[\e[32m\]$WORKSPACE\[\e[39m\] ]";
-}
+# function prompt_callback {
+#     [ -d ".terraform" ] && WORKSPACE=${TF_WORKSPACE:-$(terraform workspace show)}
+#     [ ! -z "$WORKSPACE" ] && echo " [ \[\e[32m\]$WORKSPACE\[\e[39m\] ]";
+# }

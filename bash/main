@@ -1,5 +1,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# have to source this before prompt
+source $SCRIPT_DIR/tilix
+
 source $SCRIPT_DIR/prompt
 source $SCRIPT_DIR/aliases
 
