@@ -1,5 +1,0 @@
-# make the title work in tilix
-# might also need to `ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh`
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi

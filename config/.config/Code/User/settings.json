@@ -1,15 +1,44 @@
 {
-    "window.zoomLevel": 0,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "explorer.confirmDragAndDrop": false,
     "files.insertFinalNewline": true,
+    "[markdown]": {
+        "editor.tabSize": 2
+    },
     "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "[json]": {
         "editor.tabSize": 2
     },
     "[terraform]": {
         "editor.tabSize": 2
     },
     "editor.wordWrap": "on",
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.startupEditor": "none",
+    "workbench.panel.defaultLocation": "right",
+    "git.autofetch": true,
+    "jupyter.askForKernelRestart": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "docker.images.label": "RepositoryNameAndTag",
+    "docker.containers.description": [
+        "Status"
+    ],
+    "docker.containers.label": "ContainerName",
+    "docker.containers.groupBy": "Compose Project Name",
+    "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules",
+        "**/vendor",
+        "**/.terraform"
+    ],
+    "todo-tree.filtering.ignoreGitSubmodules": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "files.watcherExclude": {
+        "**/.terraform/**": true,
+        "**/node_modules/**": true,
+        "**/vendor/*/**": true
+    }
 }

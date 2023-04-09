@@ -22,11 +22,3 @@ for FILE in $FILES ; do
         ln -s $SCRIPT_DIR/config/$FILE $HOME/$FILE
     fi
 done
-
-# dconf
-dconf load / < $SCRIPT_DIR/dconf/tilix
-echo -e "load gnome dconf? (y/n)?"
-read response
-if [ "${response,,}" = "y" ]; then
-    dconf load / < $SCRIPT_DIR/dconf/gnome
-fi

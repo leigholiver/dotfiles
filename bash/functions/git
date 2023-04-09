@@ -9,6 +9,8 @@ git() {
     # `git add` adds top level of repo
     elif [[ $@ == "add" ]]; then
         git add $(git rev-parse --show-toplevel)
+    elif [[ $@ == "push" ]]; then
+        git push -u origin
     else
         command git "$@"
     fi

@@ -1,8 +1,5 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# have to source this before prompt
-source $SCRIPT_DIR/tilix
-
 source $SCRIPT_DIR/prompt
 source $SCRIPT_DIR/aliases
 
@@ -10,3 +7,5 @@ FUNCTIONS=$(ls $SCRIPT_DIR/functions)
 for file in $FUNCTIONS ; do
   source $SCRIPT_DIR/functions/$file
 done
+
+export EDITOR=nano

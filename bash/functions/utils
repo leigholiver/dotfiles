@@ -1,0 +1,43 @@
+# todo:
+todo() {
+    grep -A1 -nri todo:  --exclude-dir={build,.build,.terraform,node_modules,vendor,venv}
+}
+
+# count lines of code
+cloc() {
+    DIR_PATH=${1:-$(pwd)}
+    EXT=${2:-"py"}
+    echo "counting *.$EXT files in $DIR_PATH..."
+    find $DIR_PATH -name "*.$EXT" | xargs wc -l | sort -nr | head -n5
+}
+
+cloc-tf() {
+    DIR_PATH=${1:-$(pwd)}
+    echo "counting *.tf files in $DIR_PATH..."
+    find -name "*.tf" -not -path "./*/.terraform/*" | xargs wc -l | sort -nr | head -n5
+}
+
+# set the compositor refresh rate, so that window moving looks nice on a 120hz monitor
+# ex:
+# gnome-refresh-rate 120
+# gnome-refresh-rate 60
+gnome-refresh-rate() {
+    sh -c "sleep 2 && dconf write /org/compiz/profiles/unity/plugins/composite/refresh-rate "$1" &"
+}
+
+
+# intel cpu stuff...
+set-performance() {
+   echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+   echo 0 | sudo sudo tee /sys/devices/system/cpu/cpu*/power/energy_perf_bias
+}
+
+set-powersave() {
+    echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+    echo 15 | sudo sudo tee /sys/devices/system/cpu/cpu*/power/energy_perf_bias
+}
+
+set-normal() {
+    echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+    echo 6 | sudo sudo tee /sys/devices/system/cpu/cpu*/power/energy_perf_bias
+}
