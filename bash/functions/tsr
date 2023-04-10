@@ -1,23 +1,8 @@
-REGEX='sts\.GetSessionToken:-[0-9]?[0-9]?h?[0-9]?[0-9]?m?[0-9]?[0-9]?s?$|sts\.GetSessionToken:[1-4]?m?[0-9]?[0-9]?s?$'
 tsr() {
-    # for some reason, aws-vault sometimes asks for mfa with as much as 4-5 minutes left...
-    if [ -z "$(aws-vault list | grep tsr | grep sts.GetSessionToken | grep -vE $REGEX)" ]; then
-        echo "Refreshing MFA token..."
-        echo $(op item get --account $SECRET_1P_ACCOUNT --otp) | aws-vault exec tsr -- sh -c "exit 1"
-        echo
-    fi
-
     aws-vault exec tsr -- ae -ptsr "$@"
 }
 
 tsr2() {
-    # for some reason, aws-vault sometimes asks for mfa with as much as 4-5 minutes left...
-    if [ -z "$(aws-vault list | grep tsr | grep sts.GetSessionToken | grep -vE $REGEX)" ]; then
-        echo "Refreshing MFA token..."
-        echo $(op item get --account $SECRET_1P_ACCOUNT --otp) | aws-vault exec tsr -- sh -c "exit 1"
-        echo
-    fi
-
     aws-vault exec tsr -- /home/leigh/.local/bin/tsr "$@"
 }
 

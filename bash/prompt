@@ -2,7 +2,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # bash git prompt
 if [ -f "$SCRIPT_DIR/.bash-git-prompt/gitprompt.sh" ]; then
-    GIT_PROMPT_THEME=Custom
+    GIT_PROMPT_THEME_FILE=$SCRIPT_DIR/.git-prompt-colors.sh
     source $SCRIPT_DIR/.bash-git-prompt/gitprompt.sh
 fi
 

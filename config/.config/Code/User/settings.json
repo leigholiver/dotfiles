@@ -40,5 +40,8 @@
         "**/.terraform/**": true,
         "**/node_modules/**": true,
         "**/vendor/*/**": true
-    }
+    },
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Quiet Light",
+    "editor.stickyScroll.enabled": true
 }
