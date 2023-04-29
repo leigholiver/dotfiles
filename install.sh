@@ -22,3 +22,11 @@ for FILE in $FILES ; do
         ln -s $SCRIPT_DIR/config/$FILE $HOME/$FILE
     fi
 done
+
+# dconf
+echo -e "load dconf settings? (y/n)?"
+read response
+if [ "${response,,}" = "y" ]; then
+    # tilix
+    dconf load /com/gexperts/Tilix/ < $SCRIPT_DIR/dconf/tilix
+fi

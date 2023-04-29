@@ -43,5 +43,6 @@
     },
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Quiet Light",
-    "editor.stickyScroll.enabled": true
+    "editor.stickyScroll.enabled": true,
+    "workbench.colorTheme": "Quiet Light"
 }
